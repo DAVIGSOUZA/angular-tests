@@ -1,11 +1,19 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { PhotoSevice } from './Imgs/photo/photo.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+
+export class AppComponent implements OnInit {
   title = 'alurapic'
-  imgUrl = 'https://picsum.photos/200'
+  photos: Object[] = []
+
+  constructor(private photoService: PhotoSevice) {}
+
+  ngOnInit(): void {
+    this.photoService.get().subscribe(photos => this.photos = photos)
+  }
 }

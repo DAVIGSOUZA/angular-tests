@@ -1,2 +1,2 @@
 <h1>{{ title }}</h1>
-<ap-responsiveImg></ap-responsiveImg>
+<ap-photo *ngFor="let photo of photos" [url]="photo.thumbnailUrl"></ap-photo>
