@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { PhotoSevice } from './Imgs/photo/photo.service';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,13 +6,6 @@ import { PhotoSevice } from './Imgs/photo/photo.service';
   styleUrls: ['./app.component.css']
 })
 
-export class AppComponent implements OnInit {
-  title = 'alurapic'
-  photos: Object[] = []
+export class AppComponent{
 
-  constructor(private photoService: PhotoSevice) {}
-
-  ngOnInit(): void {
-    this.photoService.get().subscribe(photos => this.photos = photos)
-  }
 }
