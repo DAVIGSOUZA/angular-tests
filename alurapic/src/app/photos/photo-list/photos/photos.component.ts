@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { Photo } from '../../photo/photo';
 
 @Component({
@@ -21,8 +21,8 @@ export class PhotosComponent implements OnChanges {
 
   groupColumns(photos: Photo[]) {
     const newRows = []
-    for (let i = 0; i < photos.length; i+=3) {
-      newRows.push(photos.slice(i, i+3))
+    for (let i = 0; i < photos.length; i+=4) {
+      newRows.push(photos.slice(i, i+4))
     }
     return newRows
   }
