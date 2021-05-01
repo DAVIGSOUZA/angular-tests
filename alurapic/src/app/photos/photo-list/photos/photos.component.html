@@ -2,13 +2,19 @@
   Sorry, no photos
 </p>
 
-<ol class="list-unstyled">
+<ol class="list-unstyled container">
   <li *ngFor="let cols of rows" class="row">
-    <div *ngFor="let photo of cols" class="col-3">
-      <ap-photo
-        [url]="photo.thumbnailUrl"
-        [alt]="photo.title">
-      </ap-photo>
+    <div *ngFor="let photo of cols" class="col-2" apDarkenOnHover>
+      <ap-card>
+        <ap-photo
+          [url]="photo.thumbnailUrl"
+          [alt]="photo.title">
+        </ap-photo>
+        <div class="text-center p-1">
+          <i class= "fa fa-heart-o fa-1x mr-2"></i> {{ photo.likes }}
+          <i class= "fa fa-comment-o fa-1x mx-2"></i> {{ photo.comments }}
+        </div>
+      </ap-card>
     </div>
   </li>
 </ol>
