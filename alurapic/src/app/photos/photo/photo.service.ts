@@ -13,7 +13,7 @@ export class PhotoService {
     }
 
     paginated(page: number) {
-      const startPhoto = (0 + (page - 1) * 8).toString()
-      return this.http.get<Photo[]>(API + `?_start=${startPhoto}&_limit=8`)
+      const startPhoto = (0 + (page - 1) * 12).toString()
+      return this.http.get<Photo[]>(API + `?_start=${startPhoto}&_limit=12`)
   }
 }

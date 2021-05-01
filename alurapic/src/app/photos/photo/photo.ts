@@ -4,4 +4,6 @@ export interface Photo {
     title: string
     url: string
     thumbNailUrl: string
+    likes: number,
+    comments: string
 }
