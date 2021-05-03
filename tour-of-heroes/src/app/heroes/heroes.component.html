@@ -1,0 +1,29 @@
+<div>
+  <div>
+    <h2> List of Heroes </h2>
+
+    <div>
+      <label id="new-hero">Hero name:</label>
+      <input for="new-hero" #heroName/>
+      <label id="new-hero">Hero URL image:</label>
+      <input for="new-hero" #heroImgUrl/>
+
+      <button
+        class="add-button"
+        (click)="add(heroName.value, heroImgUrl.value);
+          heroName.value='';
+          heroImgUrl.value=''"
+      >
+        Add Hero
+      </button>
+    </div>
+
+    <ul class="heroes">
+      <li *ngFor="let hero of heroes">
+        <a routerLink="/heroes/{{hero.id}}">
+          <span class="badge"> {{ hero.id }} </span> {{ hero.name }}
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
