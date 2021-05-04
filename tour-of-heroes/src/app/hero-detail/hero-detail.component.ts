@@ -19,12 +19,12 @@ export class HeroDetailComponent implements OnInit {
     private location: Location
     ) {
       this.hero = {
-        id: 8,
-        name: 'Omnitron',
-        hp: 14,
-        attack: 13,
-        defense: 13,
-        img: 'https://sentinelswiki.com/thumb.php?f=Omnitron-X_Digital_Game_Portrait.png&width=150'
+        id: 0,
+        name: '',
+        hp: 0,
+        attack: 0,
+        defense: 0,
+        img: ''
       }
     }
 

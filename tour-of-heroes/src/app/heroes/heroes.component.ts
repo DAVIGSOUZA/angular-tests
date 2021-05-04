@@ -24,9 +24,19 @@ export class HeroesComponent implements OnInit {
 
   add(name: string , img: string): void {
     name = name.trim()
-    if (!name) { return }
-    this.heroServise.addHero({ name, img }) as Hero )
-      .subscribe(hero => {this.heroes.push(hero)})
+    if (!name || !img) { return }
+    this.heroServise.addHero(
+      {
+        name: name,
+        hp: 10,
+        attack: 10,
+        defense: 10,
+        img: img
+      } as Hero).subscribe(hero =>{this.heroes.push(hero)})
   }
 
+  delete(hero: Hero): void {
+    this.heroes = this.heroes.filter(h => h !== hero)
+    this.heroServise.deleteHero(hero.id).subscribe()
+  }
 }
